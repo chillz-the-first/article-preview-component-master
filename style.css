@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
+:root {
+    --Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    background-color: var(--Light-Grayish-Blue);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: #f5f5f5;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 12px;
+}
+
+#card-img {
+    height: 100%;
+    width: 90%;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+#avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 25px;
+    margin-right: 15px;
+}
+
+#share {
+    background-color: var(--Light-Grayish-Blue);
+    border-radius: 25px;
+    padding: 15px 15px;
+}
+
+.card-txt {
+    width: 100%;
+    font-weight: 500;
+    align-self: center;
+}
+.card-txt h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--Dark-Grayish-Blue);
+}
+.card-txt p {
+    color: var(--Grayish-Blue);
+    font-size: 15px;
+}
+#txt {
+    margin: 12px 0;
+}
+
+.card-top {
+    padding: 40px 40px 10px 0;
+}
+
+.card-btm {
+    padding: 10px 40px 40px 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-self: start;
+}
+.profile h4 {
+    color: var(--Dark-Grayish-Blue);
+}
+
+.tab {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 365px;
+    right: 150px;
+    visibility: hidden;
+    width: 0;
+    z-index: 2;
+}
+
+#bar {    
+    background-color: var(--Dark-Grayish-Blue);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 15px 35px;
+    border-radius: 12px;
+}
+
+#triangle {
+    position: relative;
+    left: 99px;
+    width: 10px;
+    border: 12px solid transparent;
+    border-top-color: var(--Dark-Grayish-Blue);
+}
+
+.tab.active {
+    visibility: visible;
+    width: 16.8%;
+}
+
+@media screen and (max-width: 450px) {
+    .card {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #card-img {
+        width: 100%;
+        border-top-right-radius:  12px;
+        border-bottom-left-radius: 0;
+    }
+    
+    #avatar {
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+    }
+    
+    #share {
+        z-index: 3;
+        order: 3;
+        align-self: center;
+    }
+    
+    .card-txt {
+        width: 100%;
+    }
+    .card-txt h1 {
+        font-size: 1.1rem;
+    }
+
+    #txt {
+        margin: 18px 0;
+    }
+
+    .card-top {
+        padding: 30px 30px 0 30px;
+    }
+    
+    .card-btm {
+        margin: 0;
+        padding: 0 30px 0 30px;
+        display: grid;
+        grid-template-columns: 1fr 0.1fr auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-btm.no-pad {
+        display: flex;
+        align-items: baseline;
+        padding: 0 30px 0 0;
+        background-color: var(--Dark-Grayish-Blue);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    .profile.activated {
+        width: 0;
+        visibility: hidden;
+        order: 2;
+    }
+
+    .tab {
+        position: relative;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        order: 1;
+    }
+    .tab.active {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+    
+    #bar {
+        gap: 25px;
+        padding: 20px 35px;
+        align-items: center;
+    }
+
+    .bar-space {
+        margin: 0 8px ;
+    }
+    
+    #triangle {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+}
